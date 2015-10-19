@@ -4,7 +4,7 @@ class LocationController {
 	GeoIpService geoIpService
 	
 	def index() { 
-		def ipAddress = "8.8.8.8"//getIpAddress()
+		def ipAddress = getIpAddress()
 		def location = geoIpService.getLocation(ipAddress)
 		render location.countryName + " " + location.city
 	}
